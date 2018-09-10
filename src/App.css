@@ -1,8 +1,11 @@
 .app {
-  text-align: center;
   display: flex;
   flex-direction: column;
   background-color: #222;
+  height: 60vw;
+  width: 60vw;
+  justify-content: center;
+  align-self: center;
 }
 
 .app-header {
@@ -13,15 +16,8 @@
 }
 
 .app-title {
+  color: white;
   font-size: 1.5em;
-}
-
-.app-intro {
-  height: 60vw;
-  width: 60vw;
-  display: flex;
-  justify-content: center;
-  align-self: center;
 }
 
 .board {
@@ -30,7 +26,6 @@
   width: 90%;
   max-height: 90%;
   max-width: 90%;
-
   flex-wrap: wrap;
   justify-content: space-around;
 }

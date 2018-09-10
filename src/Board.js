@@ -20,25 +20,23 @@ class Board extends Component {
     this.checkWin();
   }
   checkWin () {
-    const arr = this.state.board;
+    const board = this.state.board;
     let winner = false;
-    for (var i = 0; i < arr.length; i+= 3){
+    for (var i = 0; i < board.length; i+= 3){
       //console.log(`row: ${i} first square: ${arr[i]}, second square: ${arr[i + 3]}, third square: ${arr[i + 6]}`)
-      if(arr[i] !== false){
-        if(arr[i] === arr[i + 1] && arr[i] === arr[i + 2]){
-          winner = arr[i];
+      if(board[i] !== false){
+        if(board[i] === board[i + 1] && board[i] === board[i + 2]){
+          winner = board[i];
         }
       }
     }
-    for (var j = 0; j < arr.length; j++){
-      //console.log(`row: ${i} first square: ${arr[i]}, second square: ${arr[i + 3]}, third square: ${arr[i + 6]}`)
-      if(arr[j] !== false){
-        if(arr[j] === arr[j + 3] && arr[j] === arr[j + 6]){
-          winner = arr[j];
+    for (var j = 0; j < board.length; j++){
+      if(board[j] !== false){
+        if(board[j] === board[j + 3] && board[j] === board[j + 6]){
+          winner = board[j];
         }
       }
     }
-
     if(winner !== false){
       console.log('winner', winner)
       alert('winner')
