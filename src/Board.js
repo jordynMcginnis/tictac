@@ -23,7 +23,6 @@ class Board extends Component {
     const board = this.state.board;
     let winner = false;
     for (var i = 0; i < board.length; i+= 3){
-      //console.log(`row: ${i} first square: ${arr[i]}, second square: ${arr[i + 3]}, third square: ${arr[i + 6]}`)
       if(board[i] !== false){
         if(board[i] === board[i + 1] && board[i] === board[i + 2]){
           winner = board[i];
@@ -35,6 +34,17 @@ class Board extends Component {
         if(board[j] === board[j + 3] && board[j] === board[j + 6]){
           winner = board[j];
         }
+      }
+    }
+    if(board[0] !== false){
+      if(board[0] === board[4] && board[0] === board[8]){
+          winner = board[0];
+      }
+    }
+    if(board[2] !== false){
+      console.log(true)
+      if(board[2] === board[4] && board[2] === board[6]){
+          winner = board[2];
       }
     }
     if(winner !== false){
