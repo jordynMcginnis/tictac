@@ -30,7 +30,7 @@ class Board extends Component {
         }
       }
     }
-    for (var j = 0; j < arr.length; j++ ){
+    for (var j = 0; j < arr.length; j++){
       //console.log(`row: ${i} first square: ${arr[i]}, second square: ${arr[i + 3]}, third square: ${arr[i + 6]}`)
       if(arr[j] !== false){
         if(arr[j] === arr[j + 3] && arr[j] === arr[j + 6]){
@@ -38,6 +38,7 @@ class Board extends Component {
         }
       }
     }
+
     if(winner !== false){
       console.log('winner', winner)
       alert('winner')
