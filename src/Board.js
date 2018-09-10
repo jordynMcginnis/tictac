@@ -7,11 +7,14 @@ class Board extends Component {
     this.state = {
       board : [false, false, false, false, false, false, false, false, false],
       turn : 'X',
-      winner: false
+      winner: false,
+      xPoints: 0,
+      yPoints: 0
     }
     this.handleClick = this.handleClick.bind(this);
     this.checkWin = this.checkWin.bind(this);
   }
+
   handleClick (position) {
     let newBoard = this.state.board;
     newBoard[position] = this.state.turn;
@@ -42,15 +45,19 @@ class Board extends Component {
       }
     }
     if(board[2] !== false){
-      console.log(true)
       if(board[2] === board[4] && board[2] === board[6]){
           winner = board[2];
       }
     }
-    if(winner !== false){
-      console.log('winner', winner)
-      alert('winner')
-      this.setState(() => ({winner}))
+    if(winner === 'X'){
+      let newpoint = this.state.xPoints + 1;
+      this.setState(() => ({winner : winner, xPoints : newpoint, board : [false, false, false, false, false, false, false, false, false]}))
+      alert(`X is the winner!!  X points: ${newpoint}, Y points: ${this.state.yPoints}`)
+    }
+    else if (winner === 'Y'){
+      let newpoint = this.state.yPoints + 1;
+      this.setState(() => ({winner : winner, yPoints : newpoint, board : [false, false, false, false, false, false, false, false, false]}))
+      alert(`Y is the winner!!  X points: ${this.state.xPoints}, Y points: ${newpoint}`)
     }
   }
   render() {
