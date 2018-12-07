@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+function Square (props) {
+  function handleClick() {
+    props.player !== false ? alert('square taken!') : props.handleClick(props.position)
+  }
 
-class Square extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.props.player !== false ? alert('square taken!') : this.props.handleClick(this.props.position)
-  }
-  render() {
-    return (
-      <div className="square" onClick={this.handleClick}>
-        {this.props.player}
-      </div>
-    );
-  }
+  return (
+    <div className="square" onClick={handleClick}>
+      {props.player}
+    </div>
+  );
 }
 
 export default Square;
